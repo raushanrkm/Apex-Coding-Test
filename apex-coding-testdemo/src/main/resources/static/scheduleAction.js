@@ -5,9 +5,9 @@ $(document).ready(function () {
     $(".error").hide();
 });
     function openForm() {
-        $("#addDateId").empty();
-        $("#addTimeId").empty();
-        $("#addDescID").empty();
+        $("#addDateId").val("");
+        $("#addTimeId").val("");
+        $("#addDescID").val("");
         $(".error").hide();
 
         $("#addNewScheduleFormID").show();
@@ -46,11 +46,11 @@ $(document).ready(function () {
                 $("#displayAllList").empty();
                 if(response.length==0)
                     response.push({"serialNo": 0,"date":"No Date","time":"-----","description":"------"});
-                var trHTML = '<tr><td>' + 'SN.    ' + '</td><td>' + 'DATE    ' + '</td><td>' + 'TIME    ' + '</td><td>' + '   DESCRIPTION' + '</td></tr>';
+                var trHTML = '<table class="table"><tr><td>' + 'SN.    ' + '</td><td>' + 'DATE    ' + '</td><td>' + 'TIME    ' + '</td><td>' + '   DESCRIPTION' + '</td></tr>';
                 $.each(response, function (i, item) {
                     trHTML += '<tr><td>' + item.serialNo + '</td><td>' + item.date + '</td><td>' + item.time + '</td><td>' + item.description + '</td></tr>';
                 });
-                $("#displayAllList").append(trHTML);
+                $("#displayAllList").append(trHTML + "</table>");
             }
         });
 
@@ -109,6 +109,9 @@ function saveTOApexDB(data){
         $("#addNewScheduleFormID").hide();
         $("#NewScheduleId").show();
         $("#serchTextID").show();
+        $("#addDescID").val("");
+        $("#serchTextID").val("");
+
         $(".error").hide();
     }
 

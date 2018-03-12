@@ -2,44 +2,64 @@
 <head>
     <meta charset="UTF-8">
     <title>Apex Schedule system</title>
-    <link rel="stylesheet" href="styles.css" type="text/css" >
+    <link rel="stylesheet" href="styles.css" type="text/css">
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script type="text/javascript" src="scheduleAction.js"></script>
-
 </head>
-
 <body>
-<div class="container">
+<div class="jumbotron">
+    <div class="container">
 
-<form id="addNewScheduleFormID" name="AddNewSchedule">
-<input type="button" id="AddScheduleId" name="AddSchedule" onclick= "addSchedule()" value="ADD">
-<input type="button" id="cancelSchedule" name="cancelschedule" onclick= "cancelForm()" value="CANCEL">
+        <form id="addNewScheduleFormID" name="AddNewSchedule" class="col-4">
+            <div class="form-group">
+                <button type="button" class="btn btn-primary" id="AddScheduleId" name="AddSchedule"
+                        onclick="addSchedule()">
+                    ADD
+                </button>
+                <button type="button" class="btn btn-cancel" id="cancelSchedule" name="cancelschedule"
+                        onclick="cancelForm()">
+                    CANCEL
+                </button>
+            </div>
 
-<br/>
+            <div class="form-group">
+                <label for="addDateId">DATE</label>
+                <input type="date" class="form-control" id="addDateId" name="addDateId"/>
+                <span class="error">Please Enter Future Schedule </span>
+            </div>
 
-<label>DATE</label><input type="date" id="addDateId" name="addDateId"/><br/><p class="error" style="color: red">Please Enter Future Schedule </p>
-<label>TIME</label><input type="time" id="addTimeId" name="addTimeId"/><br/><p class="error" style="color: red">Please Enter Future Schedule </p>
-<label>DESC</label><input type="text" id="addDescID" name="addDescID"/><br/>
+            <div class="form-group">
+                <label for="addTimeId">TIME</label><input type="time" class="form-control" id="addTimeId"
+                                                          name="addTimeId"/>
+                <span class="error">Please Enter Future Schedule </span>
+            </div>
+            <div class="form-group">
+                <label for="addDescID">DESC</label>
+                <input type="text" class="form-control" id="addDescID" name="addDescID"/>
+            </div>
+        </form>
+        <br>
+        <form>
+            <div class="col-8 form-row align-items-center">
+                <button type="button" class="btn btn-secondary" id="NewScheduleId" name="NewScheduleId"
+                        onclick="openForm()">New
+                </button>
+                <div class="col-6">
+                    <input type="search" class="form-control" id="serchTextID" name="searchText"/>
+                </div>
+                <button type="button" class="btn btn-primary btn-md" onclick="searchByDesc()">Search</button>
+            </div>
+        </form>
+        <div id="displayAllList">
 
-</form>
+            <p>mahaseth1</p>
 
 
- <input type="button" id ="NewScheduleId" name="NewScheduleId" value="New" onclick= "openForm()" />
- <input type="search" id ="serchTextID" name="searchText" />
- <input type="button" value="Search" onclick="searchByDesc()"/>
+        </div>
 
-
-<div id="displayAllList">
-
-    <p>mahaseth1</p>
-
-
-
+    </div>
 </div>
-
-</div>
-
 </body>
-
 </html>
