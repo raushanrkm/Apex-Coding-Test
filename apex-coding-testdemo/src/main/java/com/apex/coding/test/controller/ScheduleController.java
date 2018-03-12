@@ -32,9 +32,6 @@ public class ScheduleController {
     @ResponseBody
    public Schedule saveSchedule(@RequestBody Schedule schedule)
     {
-//        Schedule schedule1= new Schedule();
-////        schedule1.setDate("todaydate1");
-////        schedule1.setDescription("ram");
         System.out.println(schedule);
        this.scheduleService.saveSchedule(schedule);
        return schedule;
