@@ -8,6 +8,6 @@ import java.util.List;
 
 @Repository
 public interface ScheduleRepo extends CrudRepository<Schedule, Long> {
-    public List<Schedule> findByDescription(@Param("description") String description);
+    public List<Schedule> findByDescriptionContaining(@Param("description") String description);
 
 }

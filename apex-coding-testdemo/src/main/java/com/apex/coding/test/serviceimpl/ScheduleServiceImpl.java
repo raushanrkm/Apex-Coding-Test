@@ -22,7 +22,7 @@ public class ScheduleServiceImpl implements ScheduleService {
 
     @Override
     public List<Schedule> getScheduleByDescription(String description) {
-        return scheduleRepo.findByDescription(description);
+        return scheduleRepo.findByDescriptionContaining(description);
     }
 
     @Override
